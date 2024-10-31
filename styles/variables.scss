@@ -6,7 +6,7 @@ $body_font_family: 'Inter', sans-serif;
 $body_bg_color_LG: hsl(0, 0%, 100%);
 $top_bg_color_LG: hsl(225, 100%, 98%);
 $card_bg_LG: hsl(227, 47%, 96%); 
-$card_bg_hover_LG: hsla(227, 47%, 96%, 0.8); 
+$card_bg_hover_LG: hsla(230, 22%, 74%, 0.674); 
 $text_color_LG: hsl(228, 12%, 44%); 
 $number_followers_color_LG: hsl(230, 17%, 14%);
 
@@ -14,7 +14,7 @@ $number_followers_color_LG: hsl(230, 17%, 14%);
 $body_bg_color_DK: hsl(230, 17%, 14%);
 $top_bg_color_DK: hsl(232, 19%, 15%);
 $card_bg_DK: hsl(228, 28%, 20%); 
-$card_bg_hover_DK: hsla(228, 28%, 20%, 0.8); 
+$card_bg_hover_DK: hsla(229, 12%, 44%, 0.653); 
 $text_color_DK: hsl(228, 34%, 66%); 
 $number_followers_color_DK: hsl(0, 0%, 100%);
 
@@ -25,9 +25,29 @@ $negative_satus_color: hsl(356, 69%, 56%);
 // Borders
 $facebook_border: hsl(208, 92%, 53%);
 $twitter_border: hsl(203, 89%, 53%);
-$instagram_border: linear-gradient(hsl(37, 97%, 70%) to hsl(329, 70%, 58%));
+$instagram_border: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
 $youTube_border: hsl(348, 97%, 39%);
 
 // Theme 
 $theme_switcher_bg: hsl(230, 22%, 74%);
 $theme_switcher_active_bg: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+$theme_circle_active_bg: hsl(230, 17%, 14%);
+$theme_circle_bg: hsl(0, 0, 100%);
+
+@mixin border($bg_color) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3%;
+    width: inherit;
+    background: $bg_color;
+    border-radius: .5rem .5rem 0 0;
+}
+
+@mixin stat($color) {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 500;
+    color: $color;
+}

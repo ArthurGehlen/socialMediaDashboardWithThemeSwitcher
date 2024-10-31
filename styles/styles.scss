@@ -8,5 +8,286 @@
 }
 
 body {
+    transition: background-color .4s ease;
     background-color: $body_bg_color_LG;
-}   
+
+    .bg_top {
+        background-color: $top_bg_color_LG;
+        position: absolute;
+        z-index: -1;
+        height: 30vh;
+        width: 100vw;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto;
+        padding: 1.5rem 0rem;
+        width: 82.5vw;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            h1 {
+                font-size: clamp(1.75rem, 3vw, 2.1rem);
+                color: $number_followers_color_LG;
+            }
+
+            p {
+                color: $text_color_LG;
+                font-weight: 700;
+            }
+
+            .divider {
+                display: none;
+                height: .01rem;
+                background-color: $theme_switcher_bg;
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .change_theme {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                button {
+                    position: relative;
+                    width: 3.5rem;
+                    height: 1.6rem;
+                    padding: .4rem;
+                    border-radius: 2rem;
+                    border: none;
+                    background-color: $theme_switcher_bg;
+
+                    .circle {
+                        transform: translate(-50%, -50%);
+                        content: "";
+                        position: absolute;
+                        right: -15%;
+                        top: 50%;
+                        background-color: $theme_circle_bg;
+                        width: 1.4rem;
+                        height: 1.3rem;
+                        border-radius: 50%;
+                        transition: background-color .4s ease, left .4s ease;
+                    }
+
+                    input {
+                        cursor: pointer;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                        width: inherit;
+                        height: inherit;
+                        opacity: 0;
+                        
+                        &:checked+.circle {
+                            background-color: $theme_circle_active_bg;
+                            left: 25%;
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+        .top_cards_container {
+            margin-top: 2.5rem;
+            height: 18rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            .card {
+                position: relative;
+                background-color: $card_bg_LG;
+                height: 18rem;
+                width: 22rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                border-radius: .5rem;
+                cursor: pointer;
+                transition: background-color .4s ease;
+
+                &:hover {
+                    background-color: $card_bg_hover_LG;
+                }
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    font-weight: 700;
+                }
+
+                h2 {
+                    font-size: 8vh;
+                }
+
+                .followers {
+                    text-align: center;
+
+                    p {
+                        text-transform: uppercase;
+                        letter-spacing: .5rem;
+                    }
+                }
+            }
+        }
+
+
+        .overview_container {
+            padding-top: 1.8rem;
+            height: 14vh;
+            display: flex;
+            align-items: center;
+            color: $text_color_LG;
+            font-size: 2vh;
+        }
+
+
+        .bottom_cards_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+
+            .card {
+                width: 22rem;
+                height: 9rem;
+                background-color: $card_bg_LG;
+                border-radius: .5rem;
+                display: flex;
+                flex-direction: column;
+                transition: background-color .4s ease;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $card_bg_hover_LG;
+                }
+
+                .superior,
+                .inferior {
+                    height: 50%;
+                    padding: 1.5rem;
+                    width: inherit;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+
+                    p {
+                        color: $text_color_LG;
+                    }
+
+                    h2 {
+                        color: $number_followers_color_LG;
+                        font-size: 4vh;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Bordas
+#facebook_border {@include border($facebook_border);}
+#twitter_border {@include border($twitter_border);}
+#instagram_border {@include border($instagram_border);}
+#youtube_border {@include border($youTube_border);}
+
+// Status
+.positive_stat {@include stat($positive_status_color !important);}
+.negative_stat {@include stat($negative_satus_color !important);}
+
+@media (max-width: 768px) {
+    .divider {
+        display: block !important;
+    }
+
+    .change_theme {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .card {
+        width: 100% !important;
+    }
+
+    .overview_container {
+        margin-top: 55rem;
+    }
+}
+
+// Dark Theme
+.dark_theme {
+    .positive_stat {@include stat($positive_status_color !important);}
+    .negative_stat {@include stat($negative_satus_color !important);}
+
+    background-color: $body_bg_color_DK !important;
+
+    .bg_top {
+        background-color: $top_bg_color_DK !important;
+    }
+
+    header {
+        h1 {
+            color: $number_followers_color_DK;
+        }
+
+        p {
+            color: $text_color_DK;
+        }
+
+        .change_theme {
+            button {
+                background: $theme_switcher_active_bg;
+            }
+        }
+    }
+
+    .overview_container {
+        h2 {
+            color: $number_followers_color_DK;
+        }
+    }
+
+    .top_cards_container,
+    .bottom_cards_container {
+        .card {
+            background-color: $card_bg_DK;
+
+            h2 {
+                color: $number_followers_color_DK !important;
+            }
+
+            p {
+                font-weight: 700;
+                color: $text_color_DK !important;
+            }
+
+            .positive_stat {
+                color: $positive_status_color !important;
+            }
+
+            .negative_stat {
+                color: $negative_satus_color !important;
+            }
+
+            &:hover {
+                background-color: $card_bg_hover_DK;
+            }
+        }
+    }
+}

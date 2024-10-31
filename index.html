@@ -4,13 +4,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Frontend Mentor | Social Media Daschboard</title>
 </head>
 
-<body>
-  
+<body class="light_theme">
+  <div class="bg_top"></div>
+
+  <main>
+    <header>
+      <div class="title">
+        <h1>Social Media Dashboard</h1>
+        <p>Total Followers: 23,004</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="change_theme">
+        <p>Dark Mode</p>
+        <button id="theme_switcher_btn">
+          <input type="checkbox">
+          <div class="circle"></div>
+        </button>
+    </header>
+
+    <section class="top_cards_container">
+      <div class="card"> <!--Facebook-->
+        <div id="facebook_border"></div>
+        <p class="user">
+          <img src="images/icon-facebook.svg">
+          <span>@nathanf</span>
+        </p>
+
+        <div class="followers">
+          <h2>1987</h2>
+          <p>followers</p>
+        </div>
+
+        <p class="positive_stat">
+          <img src="images/icon-up.svg">
+          <span>12 Today</span>
+        </p>
+      </div>
+
+      <div class="card"> <!--Twitter-->
+        <div id="twitter_border"></div>
+        <p class="user">
+          <img src="images/icon-twitter.svg">
+          <span>@nathanf</span>
+        </p>
+
+        <div class="followers">
+          <h2>1044</h2>
+          <p>followers</p>
+        </div>
+
+        <p class="positive_stat">
+          <img src="images/icon-up.svg">
+          <span>99 Today</span>
+        </p>
+      </div>
+
+      <div class="card"> <!--Instagram-->
+        <div id="instagram_border"></div>
+        <p class="user">
+          <img src="images/icon-instagram.svg">
+          <span>@realnathanf</span>
+        </p>
+
+        <div class="followers">
+          <h2>11k</h2>
+          <p>followers</p>
+        </div>
+
+        <p class="positive_stat">
+          <img src="images/icon-up.svg">
+          <span>1099 Today</span>
+        </p>
+      </div>
+
+      <div class="card"> <!--Youtube-->
+        <div id="youtube_border"></div>
+        <p class="user">
+          <img src="images/icon-youtube.svg">
+          <span>Nathan F.</span>
+        </p>
+
+        <div class="followers">
+          <h2>8239</h2>
+          <p>subscribers</p>
+        </div>
+
+        <p class="negative_stat">
+          <img src="images/icon-down.svg">
+          <span>144 Today</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="overview_container">
+      <h2>Overview - Today</h2>
+    </section>
+
+    <section class="bottom_cards_container">
+      <div class="card">
+        <div class="superior">
+          <p>Page Views</p>
+          <img src="images/icon-facebook.svg">
+        </div>
+
+        <div class="inferior">
+          <h2>87</h2>
+          <p class="positive_stat">
+            <img src="images/icon-up.svg">
+            <span>3%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="superior">
+          <p>Likes</p>
+          <img src="images/icon-facebook.svg">
+        </div>
+
+        <div class="inferior">
+          <h2>52</h2>
+          <p class="negative_stat">
+            <img src="images/icon-down.svg">
+            <span>2%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="superior">
+          <p>Likes</p>
+          <img src="images/icon-instagram.svg">
+        </div>
+        <div class="inferior">
+          <h2>5462</h2>
+          <p class="positive_stat">
+            <img src="images/icon-up.svg">
+            <span>2257%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="superior">
+          <p>Profile Views</p>
+          <img src="images/icon-instagram.svg">
+        </div>
+        <div class="inferior">
+          <h2>52k</h2>
+          <p class="positive_stat">
+            <img src="images/icon-up.svg">
+            <span>1375%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="superior">
+          <p>Retweets</p>
+          <img src="images/icon-twitter.svg">
+        </div>
+        <div class="inferior">
+          <h2>117</h2>
+          <p class="positive_stat">
+            <img src="images/icon-up.svg">
+            <span>303%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="superior">
+          <p>Likes</p>
+          <img src="images/icon-twitter.svg">
+        </div>
+        <div class="inferior">
+          <h2>507</h2>
+          <p class="positive_stat">
+            <img src="images/icon-up.svg">
+            <span>553%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="superior">
+          <p>Likes</p>
+          <img src="images/icon-youtube.svg">
+        </div>
+        <div class="inferior">
+          <h2>107</h2>
+          <p class="negative_stat">
+            <img src="images/icon-down.svg">
+            <span>19%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="superior">
+          <p>Total Views</p>
+          <img src="images/icon-youtube.svg">
+        </div>
+        <div class="inferior">
+          <h2>1407</h2>
+          <p class="negative_stat">
+            <img src="images/icon-down.svg">
+            <span>12%</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>
