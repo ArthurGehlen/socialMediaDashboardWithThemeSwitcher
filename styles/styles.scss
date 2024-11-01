@@ -153,7 +153,7 @@ body {
             display: flex;
             align-items: center;
             color: $text_color_LG;
-            font-size: 2vh;
+            font-size: clamp(1.25rem, 2vh);
         }
 
 
@@ -211,9 +211,17 @@ body {
 .positive_stat {@include stat($positive_status_color !important);}
 .negative_stat {@include stat($negative_satus_color !important);}
 
+// Laptop
+@media (max-width: 1764px) {
+    .overview_container {
+        margin-top: 18rem;
+    }
+}
+
+// Celular
 @media (max-width: 768px) {
     .divider {
-        display: block !important;
+        display: block;
     }
 
     .change_theme {
@@ -221,9 +229,6 @@ body {
         width: 100%;
     }
 
-    .card {
-        width: 100% !important;
-    }
 
     .overview_container {
         margin-top: 55rem;
